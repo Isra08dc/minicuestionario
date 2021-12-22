@@ -30,7 +30,6 @@ class Quiz {
 
   play(){
     //escribe aquí el código para ocultar los elementos de la pregunta
-    this.button.mousePressed(()=>{
       this.title.hide();
       this.input1.hide();
       this.input2.hide();
@@ -41,13 +40,19 @@ class Quiz {
     text("Resultado del cuestionario",425,100)
     textSize(200)
     //llama aquí a getContestantInfo( )
-
-    //escribe la condición para comprobar si contestantInfor no está indefinido 
-
-    //escribe aquí el código para agregar una nota
-
+    if(allContestants !== undefined){
+      fill("Blue");
+      textSize(20);
+      text("*Nota: ¡El concursante que respodió correctamente, está resaltado en color verde!",130,230);
+    }
     //escribe el código para resaltar al concursante que respondió correctamente
-  });
+for(var plr in allContestants){
+  var correctAns = "2";
+  if (correctAns === allContestants[plr].answer)
+  fill("Green")
+  else 
+  fill("red");
+}
   }
 
 }
