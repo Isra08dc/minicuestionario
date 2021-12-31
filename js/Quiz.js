@@ -30,17 +30,17 @@ class Quiz {
 
   play(){
     //escribe aquí el código para ocultar los elementos de la pregunta
-      this.title.hide();
-      this.input1.hide();
-      this.input2.hide();
-      this.button.hide();
+    question.hide();
     //escribe aquí el código para cambiar el color de fondo 
     background("26a699")
     //escribe el código para mostrar un encabezado que indique el resultado del Cuestionario
     text("Resultado del cuestionario",425,100)
     textSize(200)
     //llama aquí a getContestantInfo( )
+    Contestant.getPlayerInfo();
     if(allContestants !== undefined){
+      debugger;
+      var display_Answers=250;
       fill("Blue");
       textSize(20);
       text("*Nota: ¡El concursante que respodió correctamente, está resaltado en color verde!",130,230);
@@ -52,6 +52,9 @@ for(var plr in allContestants){
   fill("Green")
   else 
   fill("red");
+  display_Answers+=30;
+  textSize(20);
+  text(allContestants[plr].name+":"+allContestants[plr].answer,250,display_Answers);
 }
   }
 

@@ -15,8 +15,8 @@ class Question {
   hide(){
     this.title.hide();
     this.input1.hide();
-    this.button.hide();
     this.input2.hide();
+    this.button.hide();
   }
 
   display(){
